@@ -28,10 +28,12 @@ router.put('/profile', authMiddleware, upload.single('avatar'), authController.u
 router.put('/password', authMiddleware, authController.updatePassword);
 
 // OAuth Routes
+const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000';
+
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-router.get('/google/callback', passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login?error=oauth_failed' }), authController.oauthCallback);
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: `${clientUrl}/login?error=oauth_failed` }), authController.oauthCallback);
 
 router.get('/github', passport.authenticate('github', { scope: ['user:email'] }));
-router.get('/github/callback', passport.authenticate('github', { failureRedirect: 'http://localhost:3000/login?error=oauth_failed' }), authController.oauthCallback);
+router.get('/github/callback', passport.authenticate('github', { failureRedirect: `${clientUrl}/login?error=oauth_failed` }), authController.oauthCallback);
 
 module.exports = router;

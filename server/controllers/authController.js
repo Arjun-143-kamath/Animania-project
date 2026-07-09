@@ -110,7 +110,8 @@ exports.oauthCallback = (req, res) => {
   const userParam = encodeURIComponent(JSON.stringify(user));
   
   // Redirect to frontend auth callback route
-  res.redirect(`http://localhost:3000/auth/callback?token=${token}&user=${userParam}`);
+  const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000';
+  res.redirect(`${clientUrl}/auth/callback?token=${token}&user=${userParam}`);
 };
 
 exports.updateProfile = async (req, res) => {
@@ -124,7 +125,8 @@ exports.updateProfile = async (req, res) => {
 
     // Handle avatar upload via multer
     if (req.file) {
-      updateData.avatar = `http://localhost:5000/uploads/${req.file.filename}`;
+      const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+      updateData.avatar = `${backendUrl}/uploads/${req.file.filename}`;
     }
 
     const updatedUser = await User.findByIdAndUpdate(

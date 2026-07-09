@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://animania-project.vercel.app'],
+  origin: ['http://localhost:3000', process.env.CLIENT_URL || 'https://animania-project.vercel.app'],
   credentials: true
 }));
 app.use(express.json());

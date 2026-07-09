@@ -7,11 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.myanimelist.net',
-      },
-      {
-        protocol: 'https',
-        hostname: 's4.anilist.co',
+        hostname: '**',
       },
       {
         protocol: 'http',

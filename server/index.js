@@ -50,5 +50,9 @@ mongoose
     });
   })
   .catch((error) => {
-    console.error('Error connecting to MongoDB:', error.message);
+    console.error('\n❌ FATAL ERROR: Failed to connect to MongoDB!');
+    console.error('❌ Check if your MONGODB_URI environment variable is correct in Render.');
+    console.error('❌ Ensure you added 0.0.0.0/0 to your MongoDB Atlas Network Access.');
+    console.error('🔍 Error Details:', error.message, '\n');
+    process.exit(1);
   });

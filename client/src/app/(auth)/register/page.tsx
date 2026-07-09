@@ -100,7 +100,7 @@ export default function RegisterPage() {
 
         <div className="mt-6 grid grid-cols-2 gap-3">
           <a
-            href="http://localhost:5000/api/auth/google"
+            href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/google`}
             className="flex items-center justify-center w-full rounded-lg border border-border bg-background py-2.5 hover:bg-muted transition-colors"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -123,7 +123,7 @@ export default function RegisterPage() {
             </svg>
           </a>
           <a
-            href="http://localhost:5000/api/auth/github"
+            href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/github`}
             className="flex items-center justify-center w-full rounded-lg border border-border bg-background py-2.5 hover:bg-muted transition-colors text-foreground"
           >
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

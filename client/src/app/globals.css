@@ -28,6 +28,23 @@
   --color-border: #262626;
   --color-input: #262626;
   --color-ring: #ffffff;
+
+  --animate-blob: blob 15s infinite;
+  --animate-blob-reverse: blob-reverse 20s infinite;
+
+  @keyframes blob {
+    0% { translate: 0px 0px; scale: 1; }
+    33% { translate: 30px -50px; scale: 1.1; }
+    66% { translate: -20px 20px; scale: 0.9; }
+    100% { translate: 0px 0px; scale: 1; }
+  }
+
+  @keyframes blob-reverse {
+    0% { translate: 0px 0px; scale: 1; }
+    33% { translate: -30px 50px; scale: 1.2; }
+    66% { translate: 20px -20px; scale: 0.8; }
+    100% { translate: 0px 0px; scale: 1; }
+  }
 }
 
 @layer base {

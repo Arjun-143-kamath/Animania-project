@@ -37,8 +37,14 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex flex-1 items-center justify-center p-4">
-      <div className="w-full max-w-md rounded-2xl bg-card p-10 border border-border shadow-2xl">
+    <div className="relative flex flex-1 items-center justify-center p-4 overflow-hidden">
+      {/* Background Gradient Blobs */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center -z-10">
+        <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[rgb(40,104,232)]/30 rounded-full blur-[100px] md:blur-[140px] -translate-x-1/4 -translate-y-1/4 animate-blob"></div>
+        <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-600/20 rounded-full blur-[100px] md:blur-[140px] translate-x-1/4 translate-y-1/4 animate-blob-reverse"></div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-md rounded-2xl bg-card/60 backdrop-blur-2xl p-10 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-extrabold text-foreground mb-2">Create Account</h1>
           <p className="text-muted-foreground">Start tracking your anime journey</p>

@@ -55,7 +55,7 @@ export default function HeroCarousel({ animes }: { animes: any[] }) {
       {/* Background: Blurred poster to create a natural color gradient */}
       {animes.map((anime, index) => (
         <div
-          key={anime.mal_id}
+          key={`${anime.mal_id}-${index}`}
           className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
             index === activeIndex ? "opacity-100" : "opacity-0"
           }`}
@@ -72,7 +72,7 @@ export default function HeroCarousel({ animes }: { animes: any[] }) {
       ))}
 
       <div className="container mx-auto px-4 lg:px-8 relative z-20 h-full flex items-center">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-500" key={activeAnime.mal_id}>
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-500" key={`${activeAnime.mal_id}-${activeIndex}`}>
           
           {/* Left Side: Text and Actions */}
           <div className="max-w-2xl">

@@ -62,9 +62,12 @@ export default function Header() {
                 : "scale-[1.8] opacity-100"
             }`}
           >
-            <span className="font-extrabold text-foreground tracking-tighter drop-shadow-2xl text-2xl">
-              Animania
-            </span>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="Animania Logo" className="w-8 h-8 object-contain rounded-lg" />
+              <span className="font-extrabold text-foreground tracking-tighter drop-shadow-2xl text-2xl">
+                Animania
+              </span>
+            </div>
           </Link>
         </div>
       </header>

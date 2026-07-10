@@ -19,8 +19,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-16 lg:mb-24 text-sm">
           {/* Brand/Logo Area */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-block font-extrabold text-2xl tracking-tight text-foreground hover:text-primary transition-colors">
-              Animania.
+            <Link href="/" className="inline-flex items-center gap-2 font-extrabold text-2xl tracking-tight text-foreground hover:text-primary transition-colors">
+              <img src="/logo.png" alt="Animania Logo" className="w-8 h-8 object-contain rounded-lg" />
+              <span>Animania.</span>
             </Link>
           </div>
           

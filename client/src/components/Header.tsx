@@ -141,7 +141,7 @@ export default function Header() {
               Log In
             </Link>
             <Link href="/register" className="text-sm font-bold bg-primary text-primary-foreground px-6 py-2.5 rounded-full hover:bg-primary/90 hover:scale-105 transition-all shadow-md">
-              Get Started
+              Sign up
             </Link>
           </div>
         ) : null}

@@ -1,7 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { Heart } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === '/login' || pathname === '/register') {
+    return null;
+  }
+
   return (
     <footer className="w-full bg-background border-t border-border pt-16 lg:pt-24 overflow-hidden mt-auto">
       <div className="container mx-auto px-4 lg:px-8">

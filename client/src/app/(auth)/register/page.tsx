@@ -26,6 +26,7 @@ export default function RegisterPage() {
       const response = await api.post("/auth/register", { email, password });
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
+      window.dispatchEvent(new Event("profileUpdated"));
       
       window.location.href = "/library";
     } catch (err: any) {
@@ -93,9 +94,9 @@ export default function RegisterPage() {
         </form>
 
         <div className="mt-6 flex items-center justify-center">
-          <div className="h-px w-full bg-border"></div>
-          <span className="px-4 text-xs font-medium text-muted-foreground uppercase bg-card">Or continue with</span>
-          <div className="h-px w-full bg-border"></div>
+          <div className="h-px flex-1 bg-border"></div>
+          <span className="px-4 text-xs font-medium text-muted-foreground uppercase bg-card whitespace-nowrap">Or continue with</span>
+          <div className="h-px flex-1 bg-border"></div>
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-3">

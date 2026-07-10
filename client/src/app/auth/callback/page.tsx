@@ -15,6 +15,7 @@ function AuthCallbackContent() {
       try {
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(JSON.parse(userStr)));
+        window.dispatchEvent(new Event("profileUpdated"));
         router.push("/library");
       } catch (e) {
         console.error("Failed to parse user data", e);

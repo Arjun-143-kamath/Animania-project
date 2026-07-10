@@ -123,10 +123,9 @@ exports.updateProfile = async (req, res) => {
     if (titleLanguage) updateData.titleLanguage = titleLanguage;
     if (defaultLibraryView) updateData.defaultLibraryView = defaultLibraryView;
 
-    // Handle avatar upload via multer
+    // Handle avatar upload via multer and Cloudinary
     if (req.file) {
-      const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
-      updateData.avatar = `${backendUrl}/uploads/${req.file.filename}`;
+      updateData.avatar = req.file.path; // Cloudinary returns the full URL in req.file.path
     }
 
     const updatedUser = await User.findByIdAndUpdate(
